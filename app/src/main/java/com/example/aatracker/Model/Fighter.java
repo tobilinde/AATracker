@@ -17,7 +17,7 @@ public class Fighter extends Unit {
 
     public static Fighter Create1940PacificFighter()
     {
-        return new Fighter(10, 4, 3, 1);
+        return new Fighter(10, 3, 4, 1);
     }
 
     public static Fighter CreateFighter(GameTypes type) {

@@ -31,6 +31,22 @@ public class CombatSimulator_uTests {
     }
 
     @Test
+    public void SimulateCombat_InfantryGiven_CombatSimulated()
+    {
+        // Arrange
+        Troops attackers = Troops.CreateTroops(0, 0, 10, 0, 0, 0, 0, GameTypes.Pacific1940);
+        Troops defenders = Troops.CreateTroops(0, 0, 10, 0, 0, 0, 0, GameTypes.Pacific1940);
+
+        ICombatRunner combatRunner = new CombatRunner(new Dice());
+        IUnitCombiner unitCombiner = new UnitCombiner();
+        ICombatCalculator combatCalculator = new CombatCalculator(combatRunner, unitCombiner);
+        CombatSimulator sut = new CombatSimulator(combatCalculator);
+
+        // Act
+        List<Double> results = sut.SimulateCombat(attackers, defenders, 10000, GameTypes.Pacific1940);
+    }
+
+    @Test
     public void SimulateCombat_EqualTroopsGivenByUpdate_CombatSimulated()
     {
         // Arrange

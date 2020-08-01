@@ -9,14 +9,14 @@ public class UnitCombiner implements IUnitCombiner {
 
     private final int InfatryWithArtileryUpgrade = 1;
     private final int TacticalBomnberWithFighterOrTankUpgrade = 1;
-
+    //TODO: Bonus to tactical bombers is only assigned when attacking
     public void AssignBonusesForAttacker(Troops troops){
         AssignInfatryWithArtilery(troops);
         AssignTacticalBomberWithFighterOrTank(troops, CombatType.Attack);
     }
 
     public void AssignBonusesForDefender(Troops troops){
-        AssignTacticalBomberWithFighterOrTank(troops, CombatType.Defense);
+
     }
 
     private void AssignInfatryWithArtilery(Troops troops){
